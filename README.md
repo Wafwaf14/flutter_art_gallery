@@ -1,122 +1,83 @@
-# 🎨 Flutter Art Gallery App
+# 📁 Feature: Architecture Setup
 
-A Flutter application designed to showcase artworks by artists with dual interfaces: one for visitors to explore, and another for artists to manage their own content. This project demonstrates architectural best practices and efficient performance for a mobile-first experience.
-
----
-
-## 🌟 Features
-
-- 🔁 **Dual Interface:** Visitor view and Artist dashboard
-- 🌍 **Multilingual:** Arabic, English, French using `easy_localization`
-- 🗃️ **Local Storage:** Artist data stored using Hive
-- ☁️ **Cloud Media:** Images and videos uploaded to Cloudinary
-- 🧠 **State Management:** Implemented with Riverpod
-- 🏗️ **Clean Architecture:** Clear separation between presentation, domain, and data layers
-- 📱 **Responsive UI:** Mobile-first design with reusable widgets
+This branch establishes the foundation and folder structure for the Flutter Art Gallery application. It is focused on preparing a scalable, modular, and maintainable architecture following a simplified version of Clean Architecture principles.
 
 ---
 
-## 🗂️ Project Structure
+## 🎯 Purpose of this Branch
+
+To organize the codebase before development begins by:
+
+* Separating concerns (UI, logic, services, models, etc.)
+* Creating folders and placeholder files for each component
+* Making the project easier to navigate and collaborate on
+* Preparing for future scalability (multilingual, cloud, local DB...)
+
+---
+
+## 📂 Folder Structure Overview
 
 ```plaintext
 /lib
-├── main.dart
-├── app.dart
-├── config/               # Theme, assets, constants
-├── localization/         # Language files
-├── router/               # GoRouter config
-├── screens/              # UI screens for artist & visitor
-├── models/               # Data models (artwork, user, etc.)
-├── services/             # Local DB, media upload, etc.
-├── repository/           # Interfaces to data sources
-├── providers/            # Riverpod state management
-├── widgets/              # Reusable UI components
-└── utils/                # Helpers and constants
+├── main.dart                      # Entry point
+├── app.dart                       # Root widget with MaterialApp
+├── config/                        # Theme, styles, app assets
+├── localization/                 # Language switching logic
+├── router/                        # App navigation setup
+├── screens/                      # UI: divided by user type
+│   ├── artist/                   # Artist interface
+│   └── visitor/                  # Visitor interface
+├── models/                       # Data models (User, Artwork, etc.)
+│   └── enums/                    # Enum values (categories...)
+├── services/                     # Cloud and local service logic
+├── repository/                   # Abstractions over services
+├── providers/                    # State management logic
+├── widgets/                      # Reusable UI widgets
+└── utils/                        # Helpers and constants
 ```
 
 ---
 
-## 🚀 Branch Strategy
+## 🧠 Why This Structure?
 
-This repository uses a feature-based branch strategy:
-
-| Branch Name             | Description |
-|-------------------------|-------------|
-| `main`                 | Production-ready code |
-| `dev`                  | Development integration branch |
-| `feature/i18n`         | Implementation of multilingual support |
-| `feature/cloud_upload` | Cloudinary image/video integration |
-| `feature/local_db`     | Local database with Hive |
-| `feature/architecture` | Project setup & folder structure |
-
-Each feature branch includes its own README file detailing:
-- What was implemented
-- Why it was chosen
-- How it works
+* ✅ **Clean Separation:** Presentation, logic, and data are split
+* ✅ **Scalability:** Easy to expand and maintain
+* ✅ **Reusable Components:** Widgets and services are modular
+* ✅ **Performance:** Lazy loading and separation improves speed
+* ✅ **Professional Practice:** Follows industry structure for Flutter
 
 ---
 
-## 🔤 Multilingual Support (feature/i18n)
-Implemented using `easy_localization` with support for Arabic, English, and French.
+## 🧱 Next Steps After This Branch
 
-### Why `easy_localization`?
-- Simple JSON format
-- Hot reload translation
-- Easy integration with widgets
-
-### File structure:
-```
-/assets/lang/
-├── en.json
-├── ar.json
-└── fr.json
-```
+* Implement localization logic in `feature/i18n`
+* Setup cloud media uploads in `feature/cloud_upload`
+* Add local DB logic in `feature/local_db`
+* Start building UI for both `artist` and `visitor` under `screens/`
 
 ---
 
-## ☁️ Cloud Media Upload (feature/cloud_upload)
-Media files are uploaded to Cloudinary. Only the URLs are stored locally.
+## ✅ Completed in This Branch
 
-### Why Cloudinary?
-- Fast CDN
-- Simple integration via SDK or REST
-- Handles images & videos
+* Created full folder structure
+* Added placeholder files for every module
+* Defined structure to host Clean Architecture logic
 
 ---
 
-## 🗃️ Local DB (feature/local_db)
-Hive is used to store artist and artwork data locally.
+## 📌 Notes
 
-### Why Hive?
-- Lightweight & NoSQL
-- Fast read/write
-- Works without internet
+> This application does **not rely on a backend server**. All artist data is stored locally, while images and videos are uploaded to the cloud (e.g., Cloudinary) to keep the app lightweight and fast.
 
 ---
 
-## 🧠 Architecture (feature/architecture)
-Clean Architecture is used to keep code modular and scalable.
+## 📖 Related Branches
 
-### Benefits:
-- Easy testing
-- Separation of concerns
-- Reusable components
-
----
-
-## 🛠️ Getting Started
-
-```bash
-flutter pub get
-flutter run
-```
+* `feature/i18n`: Handles multilingual setup
+* `feature/cloud_upload`: Media upload to cloud
+* `feature/local_db`: Storing data locally
+* `dev`: Integrating all features progressively
 
 ---
 
-## 📸 Screenshots
-*Coming soon*
-
----
-
-## 📄 License
-MIT
+Ready to build on this solid base! 🚀
