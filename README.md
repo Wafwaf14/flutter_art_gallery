@@ -32,6 +32,9 @@ To organize the codebase before development begins by:
 ├── data/                         # Concrete local/cloud sources
 │   ├── cloud/                    # Cloud sources (e.g., Firebase)
 │   └── local/                    # Local sources (Hive, SQLite...)
+├── domain/
+│   └── repositories/
+│       └── media_repository.dart
 ├── services/                     # Shared service helpers (optional)
 ├── repository/                   # Abstractions over services
 ├── providers/                    # State management logic
