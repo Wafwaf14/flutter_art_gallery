@@ -29,12 +29,14 @@ To organize the codebase before development begins by:
 │   └── visitor/                  # Visitor interface
 ├── models/                       # Data models (User, Artwork, etc.)
 │   └── enums/                    # Enum values (categories...)
-├── services/                     # Cloud and local service logic
+├── data/                         # Concrete local/cloud sources
+│   ├── cloud/                    # Cloud sources (e.g., Firebase)
+│   └── local/                    # Local sources (Hive, SQLite...)
+├── services/                     # Shared service helpers (optional)
 ├── repository/                   # Abstractions over services
 ├── providers/                    # State management logic
 ├── widgets/                      # Reusable UI widgets
 └── utils/                        # Helpers and constants
-```
 
 ---
 
