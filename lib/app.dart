@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   supportedLocales: context.supportedLocales,
   locale: context.locale,
   builder: (context, child) {
-    return HomePage(); // ⬅️ كلاس جديدة خاصة بالصفحة الرئيسية
+    return HomePage(); 
   },
 );
 
