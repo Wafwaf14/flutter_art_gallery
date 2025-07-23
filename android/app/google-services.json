@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "836544846745",
+    "project_id": "flutter-art-gallery",
+    "storage_bucket": "flutter-art-gallery.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836544846745:android:f169ddff89e8afa0c0d108",
+        "android_client_info": {
+          "package_name": "Gallery.art"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDzXL9W5QEWzp_iK1Ajk5MP9Ly8ofDJF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836544846745:android:30b49c9b22a151d8c0d108",
+        "android_client_info": {
+          "package_name": "com.example.flutter_art_gallery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDzXL9W5QEWzp_iK1Ajk5MP9Ly8ofDJF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
