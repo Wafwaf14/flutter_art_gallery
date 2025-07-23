@@ -1,122 +1,97 @@
-# 🎨 Flutter Art Gallery App
-
-A Flutter application designed to showcase artworks by artists with dual interfaces: one for visitors to explore, and another for artists to manage their own content. This project demonstrates architectural best practices and efficient performance for a mobile-first experience.
 
 ---
 
-## 🌟 Features
+## ☁️ Feature: Cloud Upload (Firebase Storage)
 
-- 🔁 **Dual Interface:** Visitor view and Artist dashboard
-- 🌍 **Multilingual:** Arabic, English, French using `easy_localization`
-- 🗃️ **Local Storage:** Artist data stored using Hive
-- ☁️ **Cloud Media:** Images and videos uploaded to Cloudinary
-- 🧠 **State Management:** Implemented with Riverpod
-- 🏗️ **Clean Architecture:** Clear separation between presentation, domain, and data layers
-- 📱 **Responsive UI:** Mobile-first design with reusable widgets
+This branch implements media uploading (images/videos) to the cloud using **Firebase Storage**. It is part of a modular Flutter app based on Clean Architecture and MVVM principles.
 
 ---
 
-## 🗂️ Project Structure
+## 🎯 Purpose
+
+To allow artists to upload their artwork media to the cloud, keeping the app lightweight and scalable without requiring a backend server.
+
+---
+
+## ✅ What’s Done in This Branch
+
+* 🔌 Integrated Firebase Storage
+* 📁 Created service: `firebase_cloud_storage_service.dart`
+* 🧠 Created `UploadProvider` for managing upload state
+* 🖼️ Built UI for uploading files via `upload_screen.dart`
+* ✅ File picker and upload feedback
+* 📦 `firebase_initializer.dart` for future Firebase scalability
+
+---
+
+## 📂 Code Structure
 
 ```plaintext
-/lib
-├── main.dart
-├── app.dart
-├── config/               # Theme, assets, constants
-├── localization/         # Language files
-├── router/               # GoRouter config
-├── screens/              # UI screens for artist & visitor
-├── models/               # Data models (artwork, user, etc.)
-├── services/             # Local DB, media upload, etc.
-├── repository/           # Interfaces to data sources
-├── providers/            # Riverpod state management
-├── widgets/              # Reusable UI components
-└── utils/                # Helpers and constants
+lib/
+├── data/
+│   └── cloud/
+│       └── firebase_cloud_storage_service.dart    # Service to handle upload
+├── providers/
+│   └── upload_provider.dart                       # Upload state manager
+├── services/
+│   └── firebase_initializer.dart                  # Firebase initialization
+├── screens/
+│   └── artist/
+│       └── upload_screen.dart                     # UI for artist to upload
 ```
 
 ---
 
-## 🚀 Branch Strategy
+## 🔧 How It Works
 
-This repository uses a feature-based branch strategy:
+1. **User picks an image** from gallery via `image_picker`.
+2. Image is passed to `UploadProvider`, which:
 
-| Branch Name             | Description |
-|-------------------------|-------------|
-| `main`                 | Production-ready code |
-| `dev`                  | Development integration branch |
-| `feature/i18n`         | Implementation of multilingual support |
-| `feature/cloud_upload` | Cloudinary image/video integration |
-| `feature/local_db`     | Local database with Hive |
-| `feature/architecture` | Project setup & folder structure |
-
-Each feature branch includes its own README file detailing:
-- What was implemented
-- Why it was chosen
-- How it works
+   * Updates UI state
+   * Sends the file to Firebase using `FirebaseCloudStorageService`
+   * Retrieves the download URL
+3. URL is shown on screen.
 
 ---
 
-## 🔤 Multilingual Support (feature/i18n)
-Implemented using `easy_localization` with support for Arabic, English, and French.
+## 💡 Why Firebase?
 
-### Why `easy_localization`?
-- Simple JSON format
-- Hot reload translation
-- Easy integration with widgets
-
-### File structure:
-```
-/assets/lang/
-├── en.json
-├── ar.json
-└── fr.json
-```
+* ✅ No backend required
+* ✅ Free up to 5GB on Spark Plan
+* ✅ Fast integration with Flutter
+* ✅ Easy to scale and switch if needed (e.g. Cloudinary)
 
 ---
 
-## ☁️ Cloud Media Upload (feature/cloud_upload)
-Media files are uploaded to Cloudinary. Only the URLs are stored locally.
+## ⚠️ Limitation / Notes
 
-### Why Cloudinary?
-- Fast CDN
-- Simple integration via SDK or REST
-- Handles images & videos
+* ❌ Firebase **Storage** requires a **billing plan upgrade** to allow uploads.
+* ⚠️ Upload works **locally** but not fully functional unless billing is enabled.
+* This branch is completed in structure, but currently **paused** due to billing issue.
 
 ---
 
-## 🗃️ Local DB (feature/local_db)
-Hive is used to store artist and artwork data locally.
+## 📌 Next Steps
 
-### Why Hive?
-- Lightweight & NoSQL
-- Fast read/write
-- Works without internet
+* Integrate `local_db` to cache metadata and media
+* Use download URL to preview uploaded artwork
+* Allow delete/edit functionality for artists
 
 ---
 
-## 🧠 Architecture (feature/architecture)
-Clean Architecture is used to keep code modular and scalable.
+## 🧩 Related Branches
 
-### Benefits:
-- Easy testing
-- Separation of concerns
-- Reusable components
-
----
-
-## 🛠️ Getting Started
-
-```bash
-flutter pub get
-flutter run
-```
+| Branch                 | Description                          |
+| ---------------------- | ------------------------------------ |
+| `feature/architecture` | Project structure and architecture   |
+| `feature/i18n`         | Localization setup (AR/EN/FR)        |
+| `feature/local_db`     | Local data storage using Hive/SQLite |
 
 ---
 
-## 📸 Screenshots
-*Coming soon*
+> 🔐 The Firebase credentials (google-services.json) are **not included** in this repo for security. You must provide your own config.
 
 ---
+Let’s keep building. 💪
 
-## 📄 License
-MIT
+---
