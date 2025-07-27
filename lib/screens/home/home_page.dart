@@ -11,7 +11,13 @@ class HomePage extends StatelessWidget {
         title: Text('app_title'.tr()),
       ),
       body: Center(
-        child: Text('welcome_message'.tr()),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('welcome_message'.tr()),
+            Text('welcome_messageeeeee'.tr())
+          ],
+        ),
       ),
     );
   }
