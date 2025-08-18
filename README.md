@@ -6,7 +6,7 @@ A Flutter application designed to showcase artworks by artists with dual interfa
 
 ###  **video demo **
 
-![App Demo](assets/gif1.gif) | ![App Demo](assets/gif2.gif)
+![App Demo](assets/1.gif) | ![App Demo](assets/3.gif) | ![App Demo](assets/0.gif)
 
 
 ## 📱 Screenshots
