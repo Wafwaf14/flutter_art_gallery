@@ -4,12 +4,21 @@ A Flutter application designed to showcase artworks by artists with dual interfa
 
 ---
 
+###  **video demo **
+
+![App Demo](assets/gif1.gif) | ![App Demo](assets/gif2.gif)
+
+
+## 📱 Screenshots
+
+| ![Welcome](assets/0.png) | ![Welcome](assets/1.png)| ![Welcome](assets/2.png) | ![Welcome](assets/3.png) |
+
+![Welcome](assets/4.png) | ![Welcome](assets/5.png)
+
 ## 🌟 Features
 
 - 🔁 **Dual Interface:** Visitor view and Artist dashboard
-- 🌍 **Multilingual:** Arabic, English, French using `easy_localization`
 - 🗃️ **Local Storage:** Artist data stored using Hive
-- ☁️ **Cloud Media:** Images and videos uploaded to Cloudinary
 - 🧠 **State Management:** Implemented with Riverpod
 - 🏗️ **Clean Architecture:** Clear separation between presentation, domain, and data layers
 - 📱 **Responsive UI:** Mobile-first design with reusable widgets
@@ -21,15 +30,11 @@ A Flutter application designed to showcase artworks by artists with dual interfa
 ```plaintext
 /lib
 ├── main.dart
-├── app.dart
-├── config/               # Theme, assets, constants
 ├── localization/         # Language files
 ├── router/               # GoRouter config
 ├── screens/              # UI screens for artist & visitor
 ├── models/               # Data models (artwork, user, etc.)
 ├── services/             # Local DB, media upload, etc.
-├── repository/           # Interfaces to data sources
-├── providers/            # Riverpod state management
 ├── widgets/              # Reusable UI components
 └── utils/                # Helpers and constants
 ```
@@ -56,33 +61,6 @@ Each feature branch includes its own README file detailing:
 
 ---
 
-## 🔤 Multilingual Support (feature/i18n)
-Implemented using `easy_localization` with support for Arabic, English, and French.
-
-### Why `easy_localization`?
-- Simple JSON format
-- Hot reload translation
-- Easy integration with widgets
-
-### File structure:
-```
-/assets/lang/
-├── en.json
-├── ar.json
-└── fr.json
-```
-
----
-
-## ☁️ Cloud Media Upload (feature/cloud_upload)
-Media files are uploaded to Cloudinary. Only the URLs are stored locally.
-
-### Why Cloudinary?
-- Fast CDN
-- Simple integration via SDK or REST
-- Handles images & videos
-
----
 
 ## 🗃️ Local DB (feature/local_db)
 Hive is used to store artist and artwork data locally.
