@@ -89,10 +89,6 @@ flutter pub get
 flutter run
 ```
 
----
-
-## 📸 Screenshots
-*Coming soon*
 
 ---
 
